@@ -18,6 +18,7 @@ void solve(){
             }
         }
     }
+    string ans = "";
     for(int i = 1; i <= N; i++) psum[i] += psum[i-1];
     for(int i = 1; i <= N; i++){
         if(arr[i] != -1){
@@ -33,12 +34,10 @@ void solve(){
                 return;
             }
         }
+        ans.push_back(psum[i] == 0 ? '1' : '0');
     }
-    for(int i = 1; i <= N; i++){
-        if(arr[i] == -1) arr[i] = 0;
-        cout << arr[i];
-    }
-    cout << endl;
+    cout << ans << endl;
+    
 }
 
 int main(){
